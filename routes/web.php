@@ -17,3 +17,4 @@ use Illuminate\Http\Request;
 */
 
 Route::resource('mahasiswas', App\Http\Controllers\MahasiswaController::class);
+Route::get('mahasiswas/nilai/{Nim}', [App\Http\Controllers\MahasiswaController::class, 'nilai'])->name('mahasiswa.nilai');

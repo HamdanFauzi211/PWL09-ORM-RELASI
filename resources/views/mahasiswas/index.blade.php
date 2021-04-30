@@ -27,7 +27,7 @@
     @endif
 <table class="table table-bordered"> 
     <tr> 
-            8y<th>Nim</th>
+            <th>Nim</th>
             <th>Nama</th> 
             <th>Kelas</th> 
             <th>Jurusan</th> 
@@ -41,7 +41,7 @@
     <tr> 
             <td>{{ $Mahasiswa->Nim }}</td> 
             <td>{{ $Mahasiswa->Nama }}</td> 
-            <td>{{ $Mahasiswa->Kelas }}</td> 
+            <td>{{ $Mahasiswa->Kelas->nama_kelas }}</td> 
             <td>{{ $Mahasiswa->Jurusan }}</td> 
             <td>{{ $Mahasiswa->No_Handphone }}</td>
             <td>{{ $Mahasiswa->Email }}</td> 
@@ -53,7 +53,9 @@
             @csrf 
             @method('DELETE') 
             <button type="submit" class="btn btn-danger">Delete</button> 
-            </form> 
+            <br><br>
+            <a class="btn btn-warning" href="{{ route('mahasiswa.nilai',$Mahasiswa->Nim) }}">Nilai</a>
+            </form>
             </td> 
     </tr> 
     @endforeach 
